@@ -9,5 +9,6 @@ docker build -t roc-local-dev .
 echo "Running ${cmd} in the development container"
 docker run --rm -it \
     -v "$(pwd)":/roc-dev \
+    -v "$(pwd)/.roc-cache":/root/.cache/roc/packages \
     roc-local-dev \
     $cmd

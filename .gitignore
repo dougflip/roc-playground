@@ -6,3 +6,6 @@
 
 # Unignore all dirs
 !*/
+
+# ignore the roc cache
+.roc-cache
