@@ -7,8 +7,6 @@ app "http-requst"
 
 run : Task {} Error
 run =
-
-    # Get time since [Unix Epoch](https://en.wikipedia.org/wiki/Unix_time)
     html <- fetchHtml "https://www.example.com" |> Task.await
     Stdout.line "Your HTML was: \(Inspect.toStr html)"
 
