@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e
+
+echo "Building a development Docker image"
+docker build -t roc-local-dev .
+
+[[ $# -eq 0 ]] && cmd="bash" || cmd="$@"
+echo "Running ${cmd} in the development container"
+docker run --rm -it \
+    -v "$(pwd)":/roc-dev \
+    roc-local-dev \
+    $cmd
